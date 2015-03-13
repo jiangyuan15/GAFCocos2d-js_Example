@@ -432,6 +432,30 @@
             "extensions/spine/CCSkeletonCanvasRenderCmd.js",
             "extensions/spine/CCSkeletonWebGLRenderCmd.js"
         ],
+            "gaf":[
+            "core",
+            
+            "extensions/gaf/GAFMacros.js",
+            "extensions/gaf/GAFBoot.js",
+            "extensions/gaf/Library/GAFAssetPreload.js",
+            "extensions/gaf/Library/GAFAsset.js",
+            "extensions/gaf/Library/GAFObject.js",
+            "extensions/gaf/Library/GAFTimeLine.js",
+            "extensions/gaf/Library/GAFTextField.js",
+            "extensions/gaf/Library/GAFSprite.js",
+            "extensions/gaf/Library/GAFMask.js",
+            "extensions/gaf/Library/GAFSpriteCanvasRenderCmd.js",
+            "extensions/gaf/Library/GAFSpriteWebGLRenderCmd.js",
+            "extensions/gaf/Library/GAFTimeLineProto.js",
+            "extensions/gaf/Library/GAFSpriteProto.js",
+            "extensions/gaf/Library/GAFMaskProto.js",
+            "extensions/gaf/Library/GAFTags.js",
+            "extensions/gaf/Library/GAFLoader.js",
+            "extensions/gaf/Library/GAFDataReader.js",
+            "extensions/gaf/Library/GAFShaders.js",
+            "extensions/gaf/Library/GAFShaderManager.js",
+            "extensions/gaf/Library/GAFAtlasLoader.js"
+        ],
         "extensions" : ["gui", "ccbreader", "editbox", "cocostudio", "spine", "ccpool"],
 
         "box2d" : [

@@ -1,0 +1,3 @@
+[submodule "frameworks/cocos2d-html5/extensions/gaf"]
+	path = frameworks/cocos2d-html5/extensions/gaf
+	url = git@github.com:Teivaz/gaf-cocos2d-html5.git
