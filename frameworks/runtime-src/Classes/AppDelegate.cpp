@@ -20,6 +20,7 @@
 #include "network/XMLHTTPRequest.h"
 #include "network/jsb_websocket.h"
 #include "network/jsb_socketio.h"
+#include "jsb_gaf_manual.h"
 
 #if (CC_TARGET_PLATFORM == CC_PLATFORM_ANDROID)
 #include "platform/android/CCJavascriptJavaBridge.h"
@@ -104,6 +105,7 @@ bool AppDelegate::applicationDidFinishLaunching()
     // 3d can be commented out to reduce the package
     sc->addRegisterCallback(register_all_cocos2dx_3d);
     sc->addRegisterCallback(register_all_cocos2dx_3d_manual);
+    sc->addRegisterCallback(register_gaf);
     
 #if (CC_TARGET_PLATFORM == CC_PLATFORM_ANDROID)
     sc->addRegisterCallback(JavascriptJavaBridge::_js_register);
