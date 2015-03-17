@@ -322,6 +322,12 @@ var HelloWorldLayer = cc.Layer.extend({
         this._super();
         var size = cc.winSize;
 
+        var asset = gaf.Asset.create("res/cut_the_hope/cut_the_hope.gaf");
+        var anim = asset.createObjectAndRun(true);
+        anim.setAnchorPoint(0.5, 0.5);
+        this.addChild(anim);
+        anim.setPosition(size.width/2, size.height/2);
+/*
         this.createMenu();
 
 
@@ -332,7 +338,7 @@ var HelloWorldLayer = cc.Layer.extend({
         var color = {r:this._bgColor, g:this._bgColor, b:this._bgColor, a:255};
         this._bg.drawRect(cc.p(0,0), cc.p(size.width, size.height), color, 0, color);
         this.addChild(this._bg, -1);
-
+*/
         return true;
     }
 });

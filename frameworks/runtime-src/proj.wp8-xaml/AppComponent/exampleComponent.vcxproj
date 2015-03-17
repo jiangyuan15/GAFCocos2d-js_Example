@@ -94,7 +94,7 @@
       <CompileAsWinRT>true</CompileAsWinRT>
       <ForcedIncludeFiles>pch.h</ForcedIncludeFiles>
       <AdditionalOptions>/Zm200 %(AdditionalOptions)</AdditionalOptions>
-      <AdditionalIncludeDirectories>$(EngineRoot)..\bindings\manual;$(EngineRoot)..\bindings\auto;$(EngineRoot)..\external\spidermonkey\include\wp8;$(EngineRoot)cocos\base;$(ProjectDir)..\..\Classes;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(EngineRoot)..\bindings\manual;$(EngineRoot)..\bindings\auto;$(EngineRoot)..\external\spidermonkey\include\wp8;$(EngineRoot)cocos\base;$(ProjectDir)..\..\Classes;$(EngineRoot)..\gaf\js_bindings\bindings;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
@@ -114,7 +114,7 @@
       <CompileAsWinRT>true</CompileAsWinRT>
       <ForcedIncludeFiles>pch.h</ForcedIncludeFiles>
       <AdditionalOptions>/Zm200 %(AdditionalOptions)</AdditionalOptions>
-      <AdditionalIncludeDirectories>$(EngineRoot)..\bindings\manual;$(EngineRoot)..\bindings\auto;$(EngineRoot)..\external\spidermonkey\include\wp8;$(EngineRoot)cocos\base;$(ProjectDir)..\..\Classes;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(EngineRoot)..\bindings\manual;$(EngineRoot)..\bindings\auto;$(EngineRoot)..\external\spidermonkey\include\wp8;$(EngineRoot)cocos\base;$(ProjectDir)..\..\Classes;$(EngineRoot)..\gaf\js_bindings\bindings;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
@@ -134,7 +134,7 @@
       <CompileAsWinRT>true</CompileAsWinRT>
       <ForcedIncludeFiles>pch.h</ForcedIncludeFiles>
       <AdditionalOptions>/Zm200 %(AdditionalOptions)</AdditionalOptions>
-      <AdditionalIncludeDirectories>$(EngineRoot)..\bindings\manual;$(EngineRoot)..\bindings\auto;$(EngineRoot)..\external\spidermonkey\include\wp8;$(EngineRoot)cocos\base;$(ProjectDir)..\..\Classes;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(EngineRoot)..\bindings\manual;$(EngineRoot)..\bindings\auto;$(EngineRoot)..\external\spidermonkey\include\wp8;$(EngineRoot)cocos\base;$(ProjectDir)..\..\Classes;$(EngineRoot)..\gaf\js_bindings\bindings;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
@@ -154,7 +154,7 @@
       <CompileAsWinRT>true</CompileAsWinRT>
       <ForcedIncludeFiles>pch.h</ForcedIncludeFiles>
       <AdditionalOptions>/Zm200 %(AdditionalOptions)</AdditionalOptions>
-      <AdditionalIncludeDirectories>$(EngineRoot)..\bindings\manual;$(EngineRoot)..\bindings\auto;$(EngineRoot)..\external\spidermonkey\include\wp8;$(EngineRoot)cocos\base;$(ProjectDir)..\..\Classes;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(EngineRoot)..\bindings\manual;$(EngineRoot)..\bindings\auto;$(EngineRoot)..\external\spidermonkey\include\wp8;$(EngineRoot)cocos\base;$(ProjectDir)..\..\Classes;$(EngineRoot)..\gaf\js_bindings\bindings;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
@@ -207,6 +207,9 @@
     </ProjectReference>
     <ProjectReference Include="..\..\..\js-bindings\cocos2d-x\external\Box2D\proj.wp8\Box2D.vcxproj">
       <Project>{c55734a3-702c-4fa1-b950-32c8e169302f}</Project>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\js-bindings\gaf\js_bindings\proj.wp8\libGAFJSBinding.vcxproj">
+      <Project>{ba4c3d1b-4852-489f-bac4-889e0bbe36d9}</Project>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
