@@ -45,16 +45,13 @@ var HelloWorldLayer = cc.Layer.extend({
         if(!this._loading)
         {
             var size = cc.winSize;
-            var l = this._loading = new cc.Sprite(res.loading_image);
+            var l = this._loading = cc.Sprite.create(res.loading_image);
+            l.retain();
+            this.addChild(l, 1000);
             l.setAnchorPoint(0.5, 0.5);
             l.setPosition(size.width/2, size.height/2);
         }
-        l = this._loading;
-        l.setRotation(0);
-        if(!l.getParent())
-        {
-            this.addChild(l, 1000);
-        }
+        this._loading.setRotation(0);
     },
 
     hideLoading: function(){
@@ -151,7 +148,7 @@ var HelloWorldLayer = cc.Layer.extend({
         }
         var self = this;
 
-        var asset = new gaf.Asset(name);
+        var asset = gaf.Asset.create(name);
         var onLoad = function()
         {
             var size = cc.winSize;
@@ -217,8 +214,11 @@ var HelloWorldLayer = cc.Layer.extend({
 
     addButton: function(idle, pressed, pos, fun)
     {
+        var self = this;
+        var callback = function(){self[fun].call(self)}
         var size = cc.winSize;
-        var item = new cc.MenuItemImage(idle, pressed, null, fun, this);
+        var item = new cc.MenuItemImage();
+        item.initWithNormalImage(idle, pressed, null, callback);
         item.setPosition(size.width * pos.x, size.height * pos.y);
         return item;
     },
@@ -322,23 +322,16 @@ var HelloWorldLayer = cc.Layer.extend({
         this._super();
         var size = cc.winSize;
 
-        var asset = gaf.Asset.create("res/cut_the_hope/cut_the_hope.gaf");
-        var anim = asset.createObjectAndRun(true);
-        anim.setAnchorPoint(0.5, 0.5);
-        this.addChild(anim);
-        anim.setPosition(size.width/2, size.height/2);
-/*
         this.createMenu();
-
-
         this.schedule(this.update, 1/24);
         this.loadAnimation(this._animations[this._currentAnimationId]);
+
 
         this._bg = new cc.DrawNode();
         var color = {r:this._bgColor, g:this._bgColor, b:this._bgColor, a:255};
         this._bg.drawRect(cc.p(0,0), cc.p(size.width, size.height), color, 0, color);
         this.addChild(this._bg, -1);
-*/
+
         return true;
     }
 });
