@@ -445,7 +445,7 @@
             "external/gaf/Library/GAFSprite.js",
             "external/gaf/Library/GAFMask.js",
             "external/gaf/Library/GAFSpriteCanvasRenderCmd.js",
-            "external/gaf/Library/GAFSpriteWe bGLRenderCmd.js",
+            "external/gaf/Library/GAFSpriteWebGLRenderCmd.js",
             "external/gaf/Library/GAFTimeLineProto.js",
             "external/gaf/Library/GAFSpriteProto.js",
             "external/gaf/Library/GAFMaskProto.js",
