@@ -9,13 +9,15 @@ LOCAL_MODULE_FILENAME := libcocos2djs
 LOCAL_SRC_FILES := hellojavascript/main.cpp \
                    ../../Classes/AppDelegate.cpp 
 
-LOCAL_C_INCLUDES := $(LOCAL_PATH)/../../Classes
+LOCAL_C_INCLUDES := $(LOCAL_PATH)/../../Classes \
+                    $(LOCAL_PATH)/../../../js-bindings/gaf/js_bindings/bindings
 
 LOCAL_STATIC_LIBRARIES := cocos_jsb_static
+LOCAL_STATIC_LIBRARIES += gafjsbindings_static
 
 LOCAL_EXPORT_CFLAGS := -DCOCOS2D_DEBUG=2 -DCOCOS2D_JAVASCRIPT
 
 include $(BUILD_SHARED_LIBRARY)
 
-
 $(call import-module,bindings)
+$(call import-module,gaf/js_bindings)
