@@ -1,6 +1,6 @@
-[submodule "frameworks/cocos2d-html5/extensions/gaf"]
-	path = frameworks/cocos2d-html5/extensions/gaf
-	url = git@github.com:Teivaz/gaf-cocos2d-html5.git
 [submodule "frameworks/js-bindings/gaf"]
 	path = frameworks/js-bindings/gaf
 	url = https://github.com/CatalystApps/Cocos2dxGAFPlayer.git
+[submodule "frameworks/cocos2d-html5/external/gaf"]
+	path = frameworks/cocos2d-html5/external/gaf
+	url = git@github.com:Teivaz/gaf-cocos2d-html5.git
