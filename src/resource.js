@@ -40,15 +40,12 @@ var g_resources = [
 	"res/cut_the_hope/cut_the_hope4.png",
 	"res/cut_the_hope/cut_the_hope5.png",
 	"res/cut_the_hope/cut_the_hope6.png",
-	"res/cut_the_hope/cut_the_hope.gaf",
 	"res/fairy2/fairy21.png",
 	"res/fairy2/fairy22.png",
 	"res/fairy2/fairy23.png",
 	"res/fairy2/fairy24.png",
-	"res/firemen/firemen1.png",
-	"res/firemen/firemen2.png",
-	"res/firemen/firemen3.png",
-	"res/firemen/firemen4.png",
+	"res/fireman/fireman.png",
+	"res/fireman/fireman_2.png",
 	"res/impiretank_05_oneplace/impiretank_05_oneplace1.png",
 	"res/impiretank_05_oneplace/impiretank_05_oneplace2.png",
 	"res/myshopsgame4/myshopsgame41.png",
@@ -56,7 +53,11 @@ var g_resources = [
 	"res/peacock_feb3_natasha/peacock_feb3_natasha1.png",
 	"res/peacock_feb3_natasha/peacock_feb3_natasha2.png",
 	"res/tiger/tiger1.png",
-	"res/tiger/tiger2.png"
+	"res/tiger/tiger2.png",
+	"res/sounds_example_tank/sounds_example_tank.png",
+	"res/sounds_example_tank/sounds_example_tank_2.png",
+	"res/sounds_example_tank/sounds_example_tank_sound21.mp3",
+	"res/sounds_example_tank/sounds_example_tank_sound39.mp3"
 ];
 for (var i in res) {
     g_resources.push(res[i]);
