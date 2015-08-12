@@ -2,12 +2,12 @@
 var s_animations = 
 [
     "res/fireman/fireman.gaf",
+    "res/dynamic_textfields/text_field_demo.gaf",
     "res/cut_the_hope/cut_the_hope.gaf",
     "res/biggreen/biggreen.gaf",
     "res/bird_bezneba/bird_bezneba.gaf",
     "res/christmas2013_julia2/christmas2013_julia2.gaf",
     "res/fairy2/fairy2.gaf",
-    "res/impiretank_05_oneplace/impiretank_05_oneplace.gaf",
     "res/myshopsgame4/myshopsgame4.gaf",
     "res/peacock_feb3_natasha/peacock_feb3_natasha.gaf",
     "res/tiger/tiger.gaf",

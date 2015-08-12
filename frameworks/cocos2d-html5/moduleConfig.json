@@ -432,23 +432,24 @@
             "extensions/spine/CCSkeletonCanvasRenderCmd.js",
             "extensions/spine/CCSkeletonWebGLRenderCmd.js"
         ],
-            "gaf":[
+        "gaf":[
             "core",
-            
+
             "external/gaf/GAFMacros.js",
             "external/gaf/GAFBoot.js",
             "external/gaf/Library/GAFAssetPreload.js",
             "external/gaf/Library/GAFAsset.js",
             "external/gaf/Library/GAFObject.js",
             "external/gaf/Library/GAFTimeLine.js",
+            "external/gaf/Library/GAFTimeLineProto.js",
             "external/gaf/Library/GAFTextField.js",
+            "external/gaf/Library/GAFTextFieldProto.js",
             "external/gaf/Library/GAFSprite.js",
+            "external/gaf/Library/GAFSpriteProto.js",
             "external/gaf/Library/GAFMask.js",
+            "external/gaf/Library/GAFMaskProto.js",
             "external/gaf/Library/GAFSpriteCanvasRenderCmd.js",
             "external/gaf/Library/GAFSpriteWebGLRenderCmd.js",
-            "external/gaf/Library/GAFTimeLineProto.js",
-            "external/gaf/Library/GAFSpriteProto.js",
-            "external/gaf/Library/GAFMaskProto.js",
             "external/gaf/Library/GAFTags.js",
             "external/gaf/Library/GAFLoader.js",
             "external/gaf/Library/GAFDataReader.js",
