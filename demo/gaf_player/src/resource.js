@@ -1,4 +1,5 @@
 var res = {
+	gaf_logo: "res/buttons/gaf_logo@2x.png",
 	loading_image: "res/buttons/load.png",
 	btn_prev_anim: "res/buttons/previous_animation_button@2x.png",
 	btn_prev_anim_s: "res/buttons/previous_animation_button_pressed@2x.png",
@@ -19,8 +20,7 @@ var res = {
 	btn_next_seq: "res/buttons/right_arrow@2x.png",
 	btn_next_seq_s: "res/buttons/right_arrow_pressed@2x.png",
 	btn_prev_seq: "res/buttons/left_arrow@2x.png",
-	btn_prev_seq_s: "res/buttons/left_arrow_pressed@2x.png",
-	gaf_logo: "res/buttons/gaf_logo@2x.png"
+	btn_prev_seq_s: "res/buttons/left_arrow_pressed@2x.png"
 };
 
 var g_resources = [

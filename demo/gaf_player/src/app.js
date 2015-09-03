@@ -2,7 +2,6 @@
 var s_animations = 
 [
     "res/fireman/fireman.gaf",
-    "res/dynamic_textfields/text_field_demo.gaf",
     "res/cut_the_hope/cut_the_hope.gaf",
     "res/biggreen/biggreen.gaf",
     "res/bird_bezneba/bird_bezneba.gaf",
@@ -14,7 +13,7 @@ var s_animations =
     "res/sounds_example_tank/sounds_example_tank.gaf"
 ];
 
-var HelloWorldLayer = cc.Layer.extend({
+var GafPlayerLayer = cc.Layer.extend({
     _animations: s_animations,
     _currentAnimationId: 0,
     _anim: null,
@@ -337,10 +336,10 @@ var HelloWorldLayer = cc.Layer.extend({
     }
 });
 
-var HelloWorldScene = cc.Scene.extend({
+var GafPlayerScene = cc.Scene.extend({
     onEnter:function () {
         this._super();
-        var layer = new HelloWorldLayer();
+        var layer = new GafPlayerLayer();
         this.addChild(layer);
     }
 });
