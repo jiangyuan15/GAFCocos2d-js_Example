@@ -1,4 +1,4 @@
-var RocketGameLayer = cc.Layer.extend(
+var SoundExampleLayer = cc.LayerColor.extend(
 {
     _anim: null,
     _asset: null,
@@ -63,7 +63,7 @@ var RocketGameLayer = cc.Layer.extend(
             var a = self._anim = self._asset.createObjectAndRun(true);
             self.addChild(a);
             a.setAnchorPoint(0.5, 0.5);
-            a.setPosition(a.width * 0.5, a.width - size.width);
+            a.setPosition(size.width * 0.5, size.height * 0.5);
             self.hideLoading();
             self.init();
         };
@@ -84,11 +84,11 @@ var RocketGameLayer = cc.Layer.extend(
     {
         //////////////////////////////
         // 1. super init first
-        this._super();
+        this._super(cc.color.GRAY);
         var size = cc.winSize;
 
         this.schedule(this.update, 1 / 24);
-        this.loadAnimation("res/mini_game/mini_game.gaf");
+        this.loadAnimation("res/sounds_example_tank/sounds_example_tank.gaf");
 
         return true;
     },
@@ -98,38 +98,17 @@ var RocketGameLayer = cc.Layer.extend(
     {
         cc.Layer.prototype.init.call(this);
 
-        var onExplosionEnd = function (event)
-        {
-            var timeline = event.getCurrentTarget();
-            timeline.removeListeners(gaf.EVENT_SEQUENCE_END);
-            timeline.visible = false;
-            timeline.playSequence("idle");
-            cc.eventManager.addListener(timeline.touchListener, timeline);
-            setTimeout(function()
-            {
-                timeline.visible = true;
-                timeline.parent.gotoAndPlay(0)
-            }, 1);
-        };
+        var self = this;
+        var button = this._anim.getObjectByName("mute_btn");
+        button.gotoAndStop(0);
 
         var touchHandler = function (touch, event)
         {
-            var timeline = event.getCurrentTarget();
-            if (timeline._name.length == 6
-            &&  timeline._name.indexOf("Rocket") < 0
-            ||  timeline._currentSequence == "explode")
+            var locationInNode = button.parent.convertToNodeSpace(touch.getLocation());
+            var rect = button.getBoundingBoxForCurrentFrame();
+            if (cc.rectContainsPoint(rect, locationInNode))
             {
-                return;
-            }
-            var locationInNode = timeline.parent.convertToNodeSpace(touch.getLocation());
-
-            var rect = timeline.getBoundingBoxForCurrentFrame();
-            if (cc.rectContainsPoint(rect, locationInNode)) //Check the click area
-            {
-                cc.eventManager.removeListener(timeline.touchListener, timeline);
-                timeline.parent.pauseAnimation();
-                timeline.playSequence("explode");
-                timeline.addEventListener(gaf.EVENT_SEQUENCE_END, onExplosionEnd);
+                self.changeState(button);
             }
         };
 
@@ -140,25 +119,32 @@ var RocketGameLayer = cc.Layer.extend(
             onTouchBegan: touchHandler
         });
 
-        var rocket;
-        var rocketAnimation;
-        for (var i = 1; i < 5; i++)
+        cc.eventManager.addListener(touchListener, button);
+
+        this.setColor(new cc.Color(163, 163, 163));
+    },
+
+    changeState: function(button)
+    {
+        if (button._currentFrame > 0)
         {
-            rocketAnimation = this._anim.getObjectByName("Rocket_with_guide" + i);
-            rocket = rocketAnimation.getObjectByName("Rocket" + i);
-            rocket.touchListener = touchListener.clone();
-            rocket.playSequence("idle");
-            cc.eventManager.addListener(rocket.touchListener, rocket);
+            button.gotoAndStop(0);
+            gaf.soundManager.setVolume(1);
+        }
+        else
+        {
+            button.gotoAndStop(1);
+            gaf.soundManager.setVolume(0);
         }
     }
 });
 
-var RocketGameScene = cc.Scene.extend(
+var SoundExampleScene = cc.Scene.extend(
 {
     onEnter: function ()
     {
         this._super();
-        var layer = new RocketGameLayer();
+        var layer = new SoundExampleLayer();
         this.addChild(layer);
     }
 });

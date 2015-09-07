@@ -455,6 +455,7 @@
             "external/gaf/Library/GAFDataReader.js",
             "external/gaf/Library/GAFShaders.js",
             "external/gaf/Library/GAFShaderManager.js",
+            "external/gaf/Library/GAFSoundManager.js",
             "external/gaf/Library/GAFAtlasLoader.js"
         ],
         "extensions" : ["gui", "ccbreader", "editbox", "cocostudio", "spine", "ccpool"],
