@@ -9,8 +9,7 @@ var s_animations =
     "res/fairy2/fairy2.gaf",
     "res/myshopsgame4/myshopsgame4.gaf",
     "res/peacock_feb3_natasha/peacock_feb3_natasha.gaf",
-    "res/tiger/tiger.gaf",
-    "res/sounds_example_tank/sounds_example_tank.gaf"
+    "res/tiger/tiger.gaf"
 ];
 
 var GafPlayerLayer = cc.Layer.extend({

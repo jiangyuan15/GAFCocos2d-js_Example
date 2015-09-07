@@ -54,10 +54,6 @@ var g_resources = [
 	"res/peacock_feb3_natasha/peacock_feb3_natasha2.png",
 	"res/tiger/tiger1.png",
 	"res/tiger/tiger2.png",
-	"res/sounds_example_tank/sounds_example_tank.png",
-	"res/sounds_example_tank/sounds_example_tank_2.png",
-	"res/sounds_example_tank/sounds_example_tank_sound21.mp3",
-	"res/sounds_example_tank/sounds_example_tank_sound39.mp3",
 	"res/dynamic_textfields/text_field_demo.png",
 	"res/dynamic_textfields/text_field_demo_2.png",
 	"res/dynamic_textfields/Cooper Black.ttf"
