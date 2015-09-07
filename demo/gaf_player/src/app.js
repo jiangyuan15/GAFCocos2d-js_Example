@@ -8,8 +8,8 @@ var s_animations =
     "res/christmas2013_julia2/christmas2013_julia2.gaf",
     "res/fairy2/fairy2.gaf",
     "res/myshopsgame4/myshopsgame4.gaf",
-    "res/peacock_feb3_natasha/peacock_feb3_natasha.gaf",
-    "res/tiger/tiger.gaf"
+    "res/peacock/peacock.gaf",
+    "res/leopard/leopard.gaf"
 ];
 
 var GafPlayerLayer = cc.Layer.extend({
