@@ -15,8 +15,6 @@ var res = {
 	btn_next_anim_s: "res/buttons/next_animation_button_pressed@2x.png",
 	btn_restart: "res/buttons/restart_button@2x.png",
 	btn_restart_s: "res/buttons/restart_button_pressed@2x.png",
-	btn_bg: "res/buttons/white_bg_button@2x.png",
-	btn_bg_s: "res/buttons/white_bg_button_pressed@2x.png",
 	btn_next_seq: "res/buttons/right_arrow@2x.png",
 	btn_next_seq_s: "res/buttons/right_arrow_pressed@2x.png",
 	btn_prev_seq: "res/buttons/left_arrow@2x.png",
@@ -36,17 +34,14 @@ var g_resources = [
 	"res/fairy2/fairy2_2.png",
 	"res/fireman/fireman.png",
 	"res/fireman/fireman_2.png",
-	"res/impiretank_05_oneplace/impiretank_05_oneplace1.png",
-	"res/impiretank_05_oneplace/impiretank_05_oneplace2.png",
 	"res/myshopsgame4/myshopsgame41.png",
 	"res/myshopsgame4/myshopsgame42.png",
 	"res/peacock/peacock.png",
 	"res/peacock/peacock_2.png",
 	"res/leopard/leopard.png",
 	"res/leopard/leopard_2.png",
-	"res/dynamic_textfields/text_field_demo.png",
-	"res/dynamic_textfields/text_field_demo_2.png",
-	"res/dynamic_textfields/Cooper Black.ttf"
+	"res/Untitled-1/Untitled-1.png",
+	"res/Untitled-1/Untitled-1_2.png"
 ];
 for (var i in res) {
     g_resources.push(res[i]);

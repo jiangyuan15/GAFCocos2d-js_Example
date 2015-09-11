@@ -1,12 +1,12 @@
-var SoundExampleLayer = cc.LayerColor.extend(
+var GunSwapLayer = cc.LayerColor.extend(
 {
     _anim: null,
     _asset: null,
+    _gunSlot: null,
+    _currentGun: null,
+    //loader
     _loading: null,
     _isLoading: false,
-    _bg: null,
-    _bgColor: 127,
-    //loader
     update: function (dt)
     {
         if (this._isLoading && this._loading)
@@ -63,7 +63,7 @@ var SoundExampleLayer = cc.LayerColor.extend(
             var a = self._anim = self._asset.createObjectAndRun(true);
             self.addChild(a);
             a.setAnchorPoint(0.5, 0.5);
-            a.setPosition(size.width * 0.5, size.height * 0.5);
+            a.setPosition(a.width * 0.5, size.height * 0.65);
             self.hideLoading();
             self.init();
         };
@@ -88,7 +88,7 @@ var SoundExampleLayer = cc.LayerColor.extend(
         var size = cc.winSize;
 
         this.schedule(this.update, 1 / 24);
-        this.loadAnimation("res/sounds_example_tank/sounds_example_tank.gaf");
+        this.loadAnimation("res/gun_swap/gun_swap.gaf");
 
         return true;
     },
@@ -96,20 +96,30 @@ var SoundExampleLayer = cc.LayerColor.extend(
     //override cc.Layer.init()
     init: function ()
     {
+        var self = this;
+
         cc.Layer.prototype.init.call(this);
 
-        var self = this;
-        var button = this._anim.getObjectByName("mute_btn");
-        button.gotoAndStop(0);
+        this._gunSlot = this._anim.getObjectByName("GUN");
+
+        var gun1 = this._asset.getSpriteFrameByName("gun1");
+        var gun2 = this._asset.getSpriteFrameByName("gun2");
+        //"gun2" sprite frame is made from Bitmap
+        //thus we need to adjust its' anchor point
+        gun2._gafAnchor =
+        {
+            x: 24.2 / gun2._rect.width,
+            y: 1 - 41.55 / gun2._rect.height
+        };
+
+        this.setGun(gun1);
 
         var touchHandler = function (touch, event)
         {
-            var locationInNode = button.parent.convertToNodeSpace(touch.getLocation());
-            var rect = button.getBoundingBoxForCurrentFrame();
-            if (cc.rectContainsPoint(rect, locationInNode))
-            {
-                self.changeState(button);
-            }
+            if (self._currentGun == gun1)
+                self.setGun(gun2);
+            else
+                self.setGun(gun1);
         };
 
         var touchListener = cc.EventListener.create(
@@ -119,32 +129,22 @@ var SoundExampleLayer = cc.LayerColor.extend(
             onTouchBegan: touchHandler
         });
 
-        cc.eventManager.addListener(touchListener, button);
-
-        this.setColor(new cc.Color(163, 163, 163));
+        cc.eventManager.addListener(touchListener, this);
     },
 
-    changeState: function(button)
+    setGun: function(gun)
     {
-        if (button._currentFrame > 0)
-        {
-            button.gotoAndStop(0);
-            gaf.soundManager.setVolume(1);
-        }
-        else
-        {
-            button.gotoAndStop(1);
-            gaf.soundManager.setVolume(0);
-        }
+        this._currentGun = gun;
+        this._gunSlot.changeSprite(gun);
     }
 });
 
-var SoundExampleScene = cc.Scene.extend(
+var GunSwapScene = cc.Scene.extend(
 {
     onEnter: function ()
     {
         this._super();
-        var layer = new SoundExampleLayer();
+        var layer = new GunSwapLayer();
         this.addChild(layer);
     }
 });

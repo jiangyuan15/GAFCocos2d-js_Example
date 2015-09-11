@@ -12,7 +12,7 @@ var s_animations =
     "res/leopard/leopard.gaf"
 ];
 
-var GafPlayerLayer = cc.Layer.extend({
+var GafPlayerLayer = cc.LayerColor.extend({
     _animations: s_animations,
     _currentAnimationId: 0,
     _anim: null,
@@ -25,8 +25,6 @@ var GafPlayerLayer = cc.Layer.extend({
     _sequences: null,
     _currentSeqId: null,
     _sequenceName: null,
-    _bg: null,
-    _bgColor: 127,
 
     update: function(dt)
     {
@@ -159,6 +157,12 @@ var GafPlayerLayer = cc.Layer.extend({
             self.play();
             var names = a.getSequences();
             self.setSequnces(Object.keys(names));
+
+            var sceneColor = self._anim._gafproto.getAsset().getSceneColor();
+            if (sceneColor)
+            {
+                self.setColor(sceneColor);
+            }
         };
 
         if(asset.addEventListener)
@@ -171,21 +175,6 @@ var GafPlayerLayer = cc.Layer.extend({
             // JSB load resources sync and have no method `addEventListener`
             onLoad();
         }
-    },
-
-    toggleBG: function(){
-        var a = this._bgColor;
-        if(a == 0)
-            this._bgColor = 127;
-        else if(a == 127)
-            this._bgColor = 255;
-        else
-            this._bgColor = 0;
-
-        var size = cc.winSize;
-        this._bg.clear();
-        var color = {r:this._bgColor, g:this._bgColor, b:this._bgColor, a:255};
-        this._bg.drawRect(cc.p(0,0), cc.p(size.width, size.height), color, 0, color);
     },
 
     prevSequence: function()
@@ -272,12 +261,6 @@ var GafPlayerLayer = cc.Layer.extend({
             cc.p(0.57, Y), 
             'restart'
         ));
-        buttons.push(this.addButton(
-            res.btn_bg, 
-            res.btn_bg_s, 
-            cc.p(0.67, Y), 
-            'toggleBG'
-        ));
         this._prevSeqBtn = this.addButton(
             res.btn_prev_seq, 
             res.btn_prev_seq_s, 
@@ -315,7 +298,8 @@ var GafPlayerLayer = cc.Layer.extend({
         this._prevSeqBtn.setVisible(false);
     },
 
-    ctor:function () {
+    ctor: function ()
+    {
         //////////////////////////////
         // 1. super init first
         this._super();
@@ -324,12 +308,6 @@ var GafPlayerLayer = cc.Layer.extend({
         this.createMenu();
         this.schedule(this.update, 1/24);
         this.loadAnimation(this._animations[this._currentAnimationId]);
-
-
-        this._bg = new cc.DrawNode();
-        var color = {r:this._bgColor, g:this._bgColor, b:this._bgColor, a:255};
-        this._bg.drawRect(cc.p(0,0), cc.p(size.width, size.height), color, 0, color);
-        this.addChild(this._bg, -1);
 
         return true;
     }
