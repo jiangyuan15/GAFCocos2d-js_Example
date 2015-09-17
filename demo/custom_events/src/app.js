@@ -1,4 +1,4 @@
-var SequencesLayer = cc.LayerColor.extend(
+var CustomEventsLayer = cc.LayerColor.extend(
 {
     _anim: null,
     //loader
@@ -113,12 +113,12 @@ var SequencesLayer = cc.LayerColor.extend(
     }
 });
 
-var SequencesScene = cc.Scene.extend(
+var CustomEventsScene = cc.Scene.extend(
 {
     onEnter: function ()
     {
         this._super();
-        var layer = new SequencesLayer();
+        var layer = new CustomEventsLayer();
         this.addChild(layer);
     }
 });
