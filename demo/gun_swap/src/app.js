@@ -2,7 +2,6 @@ var GunSwapLayer = cc.LayerColor.extend(
 {
     _anim: null,
     _asset: null,
-    _gunSlot: null,
     _currentGun: null,
     //loader
     _loading: null,
@@ -100,8 +99,6 @@ var GunSwapLayer = cc.LayerColor.extend(
 
         cc.Layer.prototype.init.call(this);
 
-        this._gunSlot = this._anim.getObjectByName("GUN");
-
         var gun1 = this._asset.getSpriteFrameByName("gun1");
         var gun2 = this._asset.getSpriteFrameByName("gun2");
         //"gun2" sprite frame is made from Bitmap
@@ -135,7 +132,7 @@ var GunSwapLayer = cc.LayerColor.extend(
     setGun: function(gun)
     {
         this._currentGun = gun;
-        this._gunSlot.changeSprite(gun);
+        this._anim.GUN.changeSprite(gun);
     }
 });
 
